@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Scanner — QR Entry System</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div id="overlayToast" class="overlay-toast" aria-live="polite" aria-atomic="true" hidden>
+      <div id="overlayCard" class="overlay-card">
+        <div id="overlayName" class="overlay-name"></div>
+        <div id="overlayMessage" class="overlay-message"></div>
+      </div>
+    </div>
+
+    <main class="container">
+      <h1>Scanner</h1>
+
+      <section class="card">
+        <h2>Live Scanner</h2>
+        <p class="muted">Camera auto-starts when the page loads. Hold a QR code to the camera.</p>
+        <div id="scannerHint" class="hint"></div>
+        <div class="grid">
+          <label class="span2">
+            Scanned Text (UID or JSON)
+            <input id="scanText" type="text" />
+          </label>
+          <div class="info">
+            <div class="label">Venue</div>
+            <div id="venueDisplay" class="value">Loading…</div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <div id="camResult" class="result"></div>
+        </div>
+
+        <div id="qrReader" class="qr-reader"></div>
+
+        <div class="actions">
+          <button id="scanBtn">Validate (manual)</button>
+          <div id="scanResult" class="result"></div>
+        </div>
+      </section>
+
+      <p><a href="/">Back to menu</a></p>
+    </main>
+
+    <script src="/vendor/html5-qrcode/html5-qrcode.min.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>

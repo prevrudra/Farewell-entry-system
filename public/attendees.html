@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Attendees — QR Entry System</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div id="toast" class="toast" aria-live="polite" aria-atomic="true" hidden>
+      <div id="toastTitle" class="toast-title"></div>
+      <div id="toastMsg" class="toast-msg"></div>
+    </div>
+
+    <main class="container">
+      <h1>Attendees</h1>
+
+      <section class="card">
+        <h2>Add New Names</h2>
+        <div class="grid">
+          <div class="span2 info">
+            <div class="label">Event</div>
+            <div id="eventDisplay" class="value">Loading…</div>
+          </div>
+          <label class="span2">
+            Names (separated by commas)
+            <textarea id="names" rows="4" placeholder="Name A, Name B, Name C"></textarea>
+          </label>
+        </div>
+        <div class="actions">
+          <button id="addBtn">Add</button>
+          <div id="addResult" class="result"></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Generate QR PDF (only new entries)</h2>
+        <div class="actions">
+          <button id="genBtn">Generate & Download PDF</button>
+          <div id="genResult" class="result"></div>
+        </div>
+      </section>
+
+      <section class="card" id="attendeesPanel">
+        <h2>Attendees</h2>
+        <div class="actions">
+          <button data-filter="ALL" class="filterBtn">All</button>
+          <button data-filter="NOT_ENTERED" class="filterBtn">Not Entered</button>
+          <button data-filter="ENTERED" class="filterBtn">Entered</button>
+          <button id="refreshAttendees">Refresh</button>
+        </div>
+        <div id="attendeesCount" class="muted"></div>
+        <div id="attendeesList" class="attendees-list"></div>
+      </section>
+
+      <p><a href="/">Back to menu</a></p>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

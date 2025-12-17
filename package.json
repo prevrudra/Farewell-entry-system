@@ -1,0 +1,23 @@
+{
+  "name": "qr-entry-system",
+  "version": "1.0.0",
+  "description": "QR-based entry management system",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.2",
+    "html5-qrcode": "^2.3.8",
+    "mongoose": "^7.3.1",
+    "pdfkit": "^0.14.0",
+    "qrcode": "^1.5.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
